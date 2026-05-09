@@ -124,7 +124,7 @@ After execution:
 
 ```text
 Running on public URL:
-https://b30aa80ce40a8301c4.gradio.live/
+https://xxxxxxxxx.gradio.live/
 ```
 
 Open the generated Gradio URL in browser.
