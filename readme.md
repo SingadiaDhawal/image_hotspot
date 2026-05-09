@@ -79,7 +79,7 @@ Supports:
 ```text
 project/
 │
-├── app.py
+├── image_hotspot.py
 ├── requirements.txt
 ├── README.md
 ├── assets/
@@ -88,103 +88,252 @@ project/
 └── outputs/
 ```
 
+---
 
+# Installation
 
-#Installation
-YOLO Version
-```pip install ultralytics gradio opencv-python pillow```
-OWL-ViT Version
-```pip install transformers torch torchvision pillow gradio timm```
-Run Project
-```python image_hotsport.py```
+## YOLOv8 Version
+
+```bash
+pip install ultralytics gradio opencv-python pillow
+```
+
+## OWL-ViT Version
+
+```bash
+pip install transformers torch torchvision pillow gradio timm
+```
+
+---
+
+# Run Project
+
+```bash
+python image_hotspot.py
+```
 
 OR run directly in Google Colab.
 
-Google Colab Support
+---
+
+# Google Colab Support
 
 This project works directly inside Google Colab.
 
 After execution:
 
+```text
 Running on public URL:
-```https://b30aa80ce40a8301c4.gradio.live/```
+[https://xxxxxxxx.gradio.live](https://b30aa80ce40a8301c4.gradio.live/)
+```
 
 Open the generated Gradio URL in browser.
 
-How It Works
-Step 1 — Upload Image
+---
+
+# How It Works
+
+## Step 1 — Upload Image
 
 User uploads:
+- Real image
+- AI-generated image
+- Indoor scene image
+- Object image
 
-Real image
-AI-generated image
-Indoor scene
-Object image
-Step 2 — Object Detection
+---
+
+## Step 2 — Object Detection
 
 AI model:
+- scans image
+- detects objects
+- generates bounding boxes
 
-scans image
-detects objects
-generates bounding boxes
-Step 3 — Hotspot Creation
+---
+
+## Step 3 — Hotspot Creation
 
 Detected objects become clickable regions.
 
 Each hotspot stores:
+- label
+- confidence score
+- coordinates
 
-label
-confidence score
-coordinates
-Step 4 — User Interaction
+---
+
+## Step 4 — User Interaction
 
 User clicks object region.
 
 System:
+- checks clicked coordinates
+- matches bounding box
+- identifies object
 
-checks clicked coordinates
-matches bounding box
+---
 
+# Example Detection Output
+
+```json
+[
+  {
+    "label": "lamp",
+    "confidence": 0.96,
+    "x1": 120,
+    "y1": 90,
+    "x2": 220,
+    "y2": 310
+  },
+  {
+    "label": "chair",
+    "confidence": 0.91,
+    "x1": 300,
+    "y1": 180,
+    "x2": 500,
+    "y2": 600
+  }
+]
+```
+
+---
+
+# Example Hotspot Output
+
+```text
+Object Found
+
+Name: lamp
+Confidence: 0.96
+
+Coordinates:
+(120, 90)
+(220, 310)
+```
+
+---
+
+# Supported Objects
 
 The system can detect:
-
-Lamp
-Chair
-Table
-Sofa
-Bottle
-Cup
-Laptop
-Phone
-Book
-TV
-Plant
-Fan
-Bed
-Clock
-Person
+- Lamp
+- Chair
+- Table
+- Sofa
+- Bottle
+- Cup
+- Laptop
+- Phone
+- Book
+- TV
+- Plant
+- Fan
+- Bed
+- Clock
+- Person
 
 Depends on selected AI model.
 
-YOLOv8 Version
-Advantages
-Faster inference
-Real-time capable
-Lightweight
-Easy deployment
-Best For
-Webcam detection
-Live systems
-Edge devices
-Fast processing
-OWL-ViT Version
-Advantages
-Fully free
-Open vocabulary detection
-Transformer-based architecture
-Better semantic understanding
-Best For
-AI-generated images
-Flexible object queries
-Research projects
-Semantic object search
+---
+
+# YOLOv8 Version
+
+## Advantages
+
+- Faster inference
+- Real-time capable
+- Lightweight
+- Easy deployment
+
+## Best For
+
+- Webcam detection
+- Live systems
+- Edge devices
+- Fast processing
+
+---
+
+# OWL-ViT Version
+
+## Advantages
+
+- Fully free
+- Open vocabulary detection
+- Transformer-based architecture
+- Better semantic understanding
+
+## Best For
+
+- AI-generated images
+- Flexible object queries
+- Research projects
+- Semantic object search
+
+---
+
+# Future Enhancements
+
+- Hover-Based Detection
+- Video Hotspot Detection
+- Real-time Webcam Support
+- Semantic Search
+- CLIP Embeddings
+- Vector Database Integration
+- Multi-object Tracking
+- Segmentation Masks
+- Similar Object Search
+- ERPNext/Frappe Integration
+
+---
+
+# Deployment Options
+
+- Google Colab
+- Local Machine
+- HuggingFace Spaces
+- AWS EC2
+- Docker
+- Render
+- Railway
+
+---
+
+# Requirements
+
+## Minimum
+
+- Python 3.10+
+- 4GB RAM
+
+## Recommended
+
+- GPU Runtime
+- CUDA Support
+- 8GB+ RAM
+
+---
+
+# License
+
+MIT License
+
+---
+
+# Author
+
+Dhawal Singadia
+
+MSc Computer Science  
+AI/ML and Full Stack Development
+
+---
+
+# Acknowledgements
+
+- Ultralytics
+- HuggingFace
+- Google Research
+- Gradio
+- PyTorch
